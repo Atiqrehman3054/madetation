@@ -50,8 +50,9 @@ class ApiService {
   //post request
 
    Future postRequst(String username,String password)async{
-    final PostRequest = Uri.parse("https://fakestoreapi.com/auth/login");
-    final response = await http.post(PostRequest,body: {
+    final Request = Uri.parse("https://fakestoreapi.com/auth/login");
+    final response = await http.post(Request,
+        body: {
       'username':username,
       'password': password,
     });

@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 
 class Api{
 
-
   Future GetxApi() async{
             final apiService = Uri.parse("https://makeup-api.herokuapp.com/api/v1/products.json");
             final  response = await http.get(apiService);

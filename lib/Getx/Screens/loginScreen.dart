@@ -54,17 +54,17 @@ class LoginScreenApi extends StatelessWidget{
               height: 50,
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(onPressed: () async{
-           final token =    await ApiService().postRequst(namecontroller.text, passwordcontroller.text);
+           final gettoken = await ApiService().postRequst(namecontroller.text, passwordcontroller.text);
 
-           if(token["token"]!=null){
-             Get.snackbar("Correct Address","Sucess your token id is ${token["token"]}",backgroundColor: Colors.green);
+           if(gettoken['token']!=null){
+             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("succes ! your token id is ${gettoken['token']}"),backgroundColor: Colors.green,));
              Future.delayed(Duration(seconds: 2),(){
                Get.to(ApiIntgeration());
              });
 
 
            }else
-             Get.snackbar("wRong Email Address","correct user name oR password",backgroundColor: Colors.red);
+            return   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("error "),backgroundColor: Colors.red,));
 
 
               },

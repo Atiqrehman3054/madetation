@@ -16,10 +16,9 @@ import 'package:meditation_app/Screens/splashScreen.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app/Getx/View/GetxApi.dart';
 
-void main() async{
+ void main() async{
  GetStorage.init();
-
-  runApp(MyApp());
+ runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +33,7 @@ debugShowCheckedModeBanner: false,
 
         primarySwatch: Colors.blue,
       ),
-      home: ShopX(),
+      home: SplashScreen(),
     );
   }
 }
